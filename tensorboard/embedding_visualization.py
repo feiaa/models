@@ -41,7 +41,7 @@ def word_embedding(LOG_DIR, emb, tsv):
             embedding.metadata_path = os.path.join(LOG_DIR, tsv)
         else:
             meta_path = os.path.join(LOG_DIR, "_meatadata.tsv")
-            with io.open(meta_path, "w") as f:
+			with io.open(meta_path, "w", encoding="utf-8") as f:
                 for line in tsv:
                     f.write(line + '\n')
             embedding.metadata_path = meta_path
